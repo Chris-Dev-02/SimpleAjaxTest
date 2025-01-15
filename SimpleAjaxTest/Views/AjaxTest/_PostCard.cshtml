@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model PostModel
+@{
+    Layout = null;
+}
+
+<div class="card mb-2" id="post-@Model.Id">
+    <div class="card-body">
+        <h2 class="card-title">@Model.Title</h2>
+        <h6>Published @Model.CreatedDate by @Model.PublishedBy</h6>
+        <p class="card-text">@Model.Content</p>
+        <button class="editButton btn btn-primary" id="@Model.Id">Edit</button>
+        <button class="deleteButton btn btn-danger" id="@Model.Id">Delete</button>
+    </div>
+</div>

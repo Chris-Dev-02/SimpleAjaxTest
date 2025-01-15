@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model PostModel
+@{
+}
+
+<div class="card mb-2" id="form-@Model.Id">
+    <div class="card-body">
+        <form class="edit-post-form" id="form-@Model.Id" action="/Posts/EditPost" method="post">
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <div class="mb-3">
+                <label for="title" class="form-label" id="title">Title</label>
+                <input type="text" class="form-control" id="edit-title" name="Title" value="@Model.Title" />
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+                <textarea class="form-control" id="edit-content" name="Content">@Model.Content</textarea>
+            </div>
+            <button type="submit" class="btn btn-success saveButton" id="@Model.Id">Save</button>
+            <button type="button" class="btn btn-secondary cancelEditingButton" id="@Model.Id">Cancel</button>
+        </form>
+    </div>
+</div>
